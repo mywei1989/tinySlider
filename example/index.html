@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>null's blog tinySlider Demo</title>
+    <style>
+        ul{
+            list-style:none;
+        }
+        .slidermain ul li div{
+            width:100%;
+            height:100%;
+            background-size:100% 100%;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body class="font-size90">
+    <div class="slidermain">
+      <ul>
+        <li><div style="background-image:url(./images/c0030.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0029.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0028.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0027.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0026.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0025.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0024.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0023.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0022.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0021.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0020.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0019.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0018.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0017.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0016.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0015.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0014.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0013.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0012.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0011.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0010.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0009.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0008.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0007.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0006.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0005.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0004.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0003.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0002.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0001.jpg)"></div></li>
+        <li><div style="background-image:url(./images/c0000.jpg)"></div></li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="../js/zepto.js"></script>
+    <script type="text/javascript" src="../js/slider.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slidermain').tinySlider({
+                scurpage: 0,
+                height:300,
+                touchbacks: function(index) {
+                }
+            });
+
+            var sliderLength = 30;
+            function SliderRota(){
+                setTimeout(function () {
+                    $('.slidermain').tinyRotaClick({});
+                    sliderLength = sliderLength - 1;
+                    if(sliderLength>0){
+                        SliderRota();
+                    }
+                }, 50);
+            }
+            SliderRota();
+
+        });
+    </script>
+</body>
+</html>
